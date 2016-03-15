@@ -1,0 +1,38 @@
+// Settings
+// ==================================================
+$tooltips-color                  : white !default;
+$tooltips-text-align             : left !default;
+$tooltips-background-color       : black !default;
+$tooltips-background-opacity     : 0.9 !default;
+
+$tooltips-border-radius          : 3px !default;
+$tooltips-padding-x              : 15px !default;
+$tooltips-padding-y              : 10px !default;
+$tooltips-spacing                : 0px !default;
+
+$tooltips-transition-duration    : 0.15s !default;
+$tooltips-translate-offset       : 5px !default;
+
+// To enable to the scaling/zoom effect,
+// set $tooltips-transform-scale to true and
+// set the value of $tooltips-transform-scale-from
+// to the start scale value (it will scale to 1 on hover).
+$tooltips-transform-scale        : true !default;
+$tooltips-transform-scale-from   : 0.7 !default;
+
+// To enable the tail of the bubble,
+// set $tooltips-tail to true and
+// customize the tail accordingly.
+$tooltips-tail                   : true !default;
+$tooltips-tail-background-color  : $tooltips-background-color !default;
+$tooltips-tail-background-opacity: $tooltips-background-opacity !default;
+$tooltips-tail-width             : 16px !default;
+$tooltips-tail-height            : 10px !default;
+
+// Tooltip size map (TODO: needs thorough explanation)
+$tooltips-size-map: (
+  default: 200px, // Required
+  small  : 100px,
+  medium : 200px,
+  large  : 400px,
+) !default;
