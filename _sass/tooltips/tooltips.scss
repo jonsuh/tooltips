@@ -30,7 +30,7 @@ $tooltips-tail-width             : 16px !default;
 $tooltips-tail-height            : 10px !default;
 
 $tooltips-size-map: (
-  default: 200px,
+  default: 200px, // Required
   small  : 100px,
   medium : 200px,
   large  : 400px,
@@ -42,6 +42,8 @@ $tooltips-size-map: (
 [data-tooltip] {
   position: relative;
 
+  // Bubble
+  // ==================================================
   &::before {
     color: $tooltips-color;
     text-align: $tooltips-text-align;
@@ -62,6 +64,8 @@ $tooltips-size-map: (
     transform-origin: bottom center;
   }
 
+  // Tail
+  // ==================================================
   &::after {
     @if $tooltips-tail == true {
       width: $tooltips-tail-width;
@@ -98,6 +102,8 @@ $tooltips-size-map: (
                 transform $tooltips-transition-duration cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
+  // Hover
+  // ==================================================
   &:hover,
   &.is-on {
     &::before,
@@ -121,12 +127,16 @@ $tooltips-size-map: (
   }
 }
 
+// Classes based on size map
+// ==================================================
 @each $tooltip-size-name, $tooltip-size-value in $tooltips-size-map {
   .tooltip--#{$tooltip-size-name}::before {
     max-width: $tooltip-size-value;
   }
 }
 
+// Fit class
+// ==================================================
 .tooltip--fit::before {
   width: 100%;
   max-width: inherit;
