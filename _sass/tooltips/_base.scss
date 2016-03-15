@@ -52,13 +52,14 @@
 
   &::before,
   &::after {
-    opacity: 0;
-    z-index: -1;
-    position: absolute;
     $transform: translateX(-50%) translateY($tooltips-translate-offset);
     @if $tooltips-transform-scale == true {
       $transform: $transform + scale($tooltips-transform-scale-from);
     }
+
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
     transform: $transform;
     transition: opacity $tooltips-transition-duration cubic-bezier(0.1, 1, 0.4, 1),
                 transform $tooltips-transition-duration cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -75,16 +76,16 @@
         $translateY: $translateY + $tooltips-tail-height;
       }
 
+      $transform: translateX(-50%) translateY($translateY * -1);
+      @if $tooltips-transform-scale == true {
+        $transform: $transform + scale(1);
+      }
+
       opacity: 1;
       z-index: 1;
       transition: opacity $tooltips-transition-duration cubic-bezier(0.1, 1, 0.4, 1),
                   transform $tooltips-transition-duration cubic-bezier(0.215, 0.61, 0.355, 1);
-      @if $tooltips-transform-scale == true {
-        transform: translateX(-50%) translateY($translateY * -1) scale(1);
-      }
-      @else {
-        transform: translateX(-50%) translateY($translateY * -1);
-      }
+      transform: $transform;
     }
   }
 }
