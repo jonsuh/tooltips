@@ -3,3 +3,18 @@
 @import "settings";
 @import "generic";
 @import "typography";
+
+@import "tooltips/tooltips";
+
+body {
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+[data-tooltip] {
+  border-bottom: 1px dotted blue;
+  cursor: pointer;
+}
